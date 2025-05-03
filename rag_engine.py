@@ -33,6 +33,15 @@ def create_vector_store(documents):
 
 def load_vector_store():
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    # Auto-create the index if it's missing
+    index_path = "faiss_index/index.faiss"
+    if not os.path.exists(index_path):
+        print("⚠️ FAISS index not found. Rebuilding...")
+        documents = load_recipes("data/recipes.jsonl")
+        create_vector_store(documents)
+        print("✅ FAISS index created.")
+
     return FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 
 def get_meal_suggestions(user_ingredients, mode="normal", stream_handler=None):
