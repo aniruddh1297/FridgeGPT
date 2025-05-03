@@ -35,4 +35,6 @@ GPT via OpenRouter
 Streamlit
 
 
+Find sample app here 
 
+[text](https://fridgegpt-bz2q7cmdyhmmvhtcvgwzkn.streamlit.app/)
