@@ -1,0 +1,33 @@
+# Bytecode and Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Environment
+venv/
+env/
+.venv/
+.env
+.env.*
+
+# FAISS index files (local binary)
+faiss_index/
+
+# VS Code and PyCharm
+.vscode/
+.idea/
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+
+# Python dependency management
+pip-log.txt
+poetry.lock
+Pipfile.lock
+
+# Streamlit secrets
+.streamlit/secrets.toml
